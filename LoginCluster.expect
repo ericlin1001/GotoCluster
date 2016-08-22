@@ -1,0 +1,14 @@
+#!/usr/bin/expect
+set timeout 3
+spawn ssh middle
+
+expect "linjun"
+send "su cluster\r"
+
+expect "Password:"
+send "cluster510\r"
+
+expect "cluster"
+send "cd ~/linjunhao/Projects\r"
+interact
+#expect eof

@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+set timeout 2
+spawn ssh middle
+
+expect "$"
+send "./startRun.sh\r"
+
+expect "Password:"
+send "cluster510\r"
+
+#interact
+expect eof
+
