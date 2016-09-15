@@ -24,7 +24,14 @@ expect "cluster"
 send "echo cluster510|sudo -S chown -R cluster:cluster /home/linjunhao/shared/*\r"
 #
 expect "cluster"
-send "echo cluster510|sudo -S mv /home/linjunhao/shared/* ./\r"
-send "\r"
+#rsync -a arhives mode; -I: don't skip files.
+send "rsync -aI /home/linjunhao/shared/* ./\r"
+#send "echo cluster510|sudo -S mv -u /home/linjunhao/shared/* ./\r"
+
+expect "cluster"
+send "echo cluster510|sudo -S rm -rf /home/linjunhao/shared/*\r"
+
+expect "cluster"
+send "ls\r"
 interact
 #expect eof
