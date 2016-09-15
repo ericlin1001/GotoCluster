@@ -1,7 +1,7 @@
 #!/usr/bin/expect
 set timeout 3
 #set from [lindex $argv 0];
-set to [lindex $argv 0];
+set from [lindex $argv 0];
 
 #send_user "copy from $from to $to.\r"
 #copy to shared.
@@ -17,7 +17,7 @@ expect "cluster"
 send "cd ~/linjunhao/Projects\r"
 #
 expect "cluster"
-send "cd $to\r"
+send "cd $from\r"
 
 #copy from shared to destination
 expect "cluster"

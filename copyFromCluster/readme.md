@@ -1,3 +1,2 @@
-# Copy To Cluster
-Usage:
-	./copy ./test ~/linjunhao/Projects/tmp
+# Copy From Cluster
+All codes are just copy from the copyToCluster.
